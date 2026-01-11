@@ -1,0 +1,16 @@
+branch_id,branch_name,latitude,longitude,district,region,branch_type
+BR001,Makati Central Branch,14.5547,121.0244,Makati,NCR,Main
+BR002,BGC Branch,14.5514,121.0497,Taguig,NCR,Sub
+BR003,Ortigas Branch,14.5866,121.0581,Pasig,NCR,Main
+BR004,Alabang Branch,14.4297,121.0403,Muntinlupa,NCR,Sub
+BR005,Quezon City Branch,14.6760,121.0437,Quezon City,NCR,Main
+BR006,Manila Branch,14.5995,120.9842,Manila,NCR,Main
+BR007,Mandaluyong Branch,14.5764,120.9772,Mandaluyong,NCR,Sub
+BR008,Pasay Branch,14.5378,121.0014,Pasay,NCR,Sub
+BR009,Marikina Branch,14.6505,120.9889,Marikina,NCR,Sub
+BR010,San Juan Branch,14.6091,121.0223,San Juan,NCR,Sub
+BR011,Antipolo Branch,14.5889,121.0583,Antipolo,Rizal,Sub
+BR012,Cainta Branch,14.5678,121.0156,Cainta,Rizal,Sub
+BR013,Taytay Branch,14.6234,121.0367,Taytay,Rizal,Sub
+BR014,Binangonan Branch,14.5812,120.9945,Binangonan,Rizal,Sub
+BR015,Rodriguez Branch,14.6089,121.0278,Rodriguez,Rizal,Sub

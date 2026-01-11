@@ -1,0 +1,16 @@
+feedback_id,customer_id,feedback_text,sentiment,date_submitted,rating
+FB001,CUST001,"Great service at the Makati branch. Staff was very helpful.",positive,2024-01-15,5
+FB002,CUST003,"Long waiting time at ATM. Need more machines.",negative,2024-01-16,2
+FB003,CUST005,"Online banking app is user-friendly and fast.",positive,2024-01-17,4
+FB004,CUST007,"Had issues with card transaction. Resolved quickly by support.",neutral,2024-01-18,3
+FB005,CUST010,"Excellent customer service. Highly recommend this bank.",positive,2024-01-19,5
+FB006,CUST012,"Website was down for maintenance. Very inconvenient.",negative,2024-01-20,1
+FB007,CUST015,"Branch location is convenient. Good parking space.",positive,2024-01-21,4
+FB008,CUST018,"Mobile app needs improvement. Sometimes crashes.",negative,2024-01-22,2
+FB009,CUST020,"Quick loan approval process. Very satisfied.",positive,2024-01-23,5
+FB010,CUST025,"ATM fees are too high compared to other banks.",negative,2024-01-24,2
+FB011,CUST028,"Professional staff and clean facilities.",positive,2024-01-25,4
+FB012,CUST030,"Interest rates are competitive. Good investment options.",positive,2024-01-26,4
+FB013,CUST035,"Had to wait 30 minutes for teller service.",negative,2024-01-27,2
+FB014,CUST040,"Online transfer was instant. Very convenient.",positive,2024-01-28,5
+FB015,CUST045,"Credit card application process was smooth.",positive,2024-01-29,4

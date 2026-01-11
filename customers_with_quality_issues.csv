@@ -1,0 +1,11 @@
+customer_id,name,age,gender,income,account_balance,account_type,risk_score,location_lat,location_lng,churn_flag
+CUST101,Maria Santos,28,F,45000,12500.50,Savings,0.15,14.5995,120.9842,0
+CUST102,,35,M,65000,25000.75,Checking,0.25,14.6091,121.0223,0
+CUST103,Ana Rodriguez,-5,F,85000,45000.25,Premium,0.10,14.5547,121.0244,1
+CUST104,Carlos Mendoza,29,X,38000,8500.00,Savings,0.45,14.6760,121.0437,0
+CUST105,Lisa Garcia,51,F,,75000.50,Premium,0.05,14.5764,120.9772,0
+CUST106,Roberto Silva,33,M,52000,-1000.25,Checking,0.30,14.6378,121.0014,1
+CUST107,Carmen Lopez,999,F,42000,9800.75,Savings,0.35,14.5889,121.0583,0
+CUST108,Miguel Torres,47,M,78000,55000.00,InvalidType,0.12,14.6505,120.9889,0
+CUST109,Sofia Reyes,31,F,48000,15500.25,Checking,1.28,14.5678,121.0156,0
+CUST110,Diego Morales,39,M,72000,32000.50,Premium,0.18,,121.0367,1

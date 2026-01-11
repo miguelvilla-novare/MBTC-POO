@@ -1,0 +1,257 @@
+SEQ #,TC #,BR FUNCTION ,BR ID(s),Test Case,Test Case Author (Division),Test Case Author (Name),Actor (User Role),"TEST STEPS (""How To"") / Narrative of What the Business User Would Do",Describe Test Data ,Expected Result,Novare Remarks
+8,2,Advanced Analytics and Machine Learning,AAM-01,"Users should be able to create various visualizations automatically (in 5 or less steps or with minimal effort) that are key to revealing trends, seasonalities, correlations, data distribution, anomalies and directional changes. At the least, the system should enable creation of below visualizations:
+   1) Line chart
+   2) Bar chart
+   3) Pie/Donut chart
+   4) Ribbon Chart
+   5) Heat Map
+   6) Tree Map
+   7) Decomposition Tree
+   8) Scatter / Pair Plot
+   9) Histogram 
+   10) Boxplot","DMD
+DWD
+DSAAD
+ITG","Leonard Balon
+DWD-SRDD
+ITG CORE PROJECT TEAM
+JD Macatuggal
+Matias, Al Zandrix","Business Analytics Manager
+Developer
+Technical User
+Data Scientist
+Data Analyst
+Data Engineer",Show steps how to setup visualization on current objects,Sample data,"The system displays the selected visualization (e.g., bar chart, line graph, pie chart) within the analytics report, accurately reflecting the underlying data, with appropriate labels, legends, and formatting, and allows basic customization such as filtering, resizing, and exporting.",
+8,3,Advanced Analytics and Machine Learning,AAM-01,Natural language summary/explanation,ITG,ITG CORE PROJECT TEAM,Technical User,"AI's ability to provide a natural language summary/explanation of a generated dashboard or report, highlighting key trends or anomalies.",,"The summary is accurate, uses business-relevant terminology, and correctly interprets the data presented in the visualization.",
+8,4,Advanced Analytics and Machine Learning,AAM-01,Data quality anomalies,ITG,ITG CORE PROJECT TEAM,Technical User,Tets the AI capability to detect and flag data quality anomalies.,,An alert is triggered for the data quality issue.,
+8,5,Advanced Analytics and Machine Learning,AAM-01,Prediction quality - Positive Input,ITG,ITG CORE PROJECT TEAM,Technical User,"1. Input data that is known to guarantee a specific positive outcome (e.g., a user who made 10 purchases in the last hour, guaranteeing a high fraud score). 2. Check the prediction output",,"The model outputs a prediction score (e.g., fraud_score) that is above the established business threshold (e.g., ≥0.95).",
+8,6,Advanced Analytics and Machine Learning,AAM-01,Prediction quality - Negative Input,ITG,ITG CORE PROJECT TEAM,Technical User,"1. Input data that is known to guarantee a specific negative outcome (e.g., a brand new user with no activity, guaranteeing a low recommendation score). 2. Check the prediction output",,"The model outputs a prediction score (e.g., recommendation_score) that is below the established business threshold (e.g., ≤0.10).",
+8,7,Advanced Analytics and Machine Learning,AAM-01,Prediction Drift Monitoring Functionality,ITG,ITG CORE PROJECT TEAM,Technical User,"1. Inject data into the production traffic stream that has a significantly different distribution from the training data (e.g., drastically different age distribution). 2. Check the drift monitoring dashboard and alerting system",,"The monitoring system detects the Data Drift (or Prediction Drift), generates an alert, and flags the time window of the anomalous data.",
+8,8,Advanced Analytics and Machine Learning,AAM-02,"Users should be able to, at least to a similar extent as MS Excel charts,  customize visualization properties (via dropdown or menu of options) such as
+   1) its type, size, formatting (e.g., filters, slicers), & behavior and of the elements inside it
+   2) its interaction with other visualizations
+   3) its data import source/s",DMD,"JD Macatuggal
+Leonard Balon",Business Analytics Manager,"1. Access the visualization tool and select a dataset.  
+2. Choose a chart type (e.g., bar, line, pie) from a dropdown or menu of visualization options.  
+3. Customize chart properties such as size, labels, filters, slicers, and formatting using available UI controls.  
+4. Define how the visualization interacts with other charts (e.g., cross-filtering, drill-through).  
+5. Select or change the data source feeding the visualization and validate the updated output.",,"1. The user can select and switch between multiple chart types using a dropdown or menu.  
+2. Visualization properties (e.g., size, formatting, filters) are customizable and reflect changes instantly.  
+3. Interactions between visualizations (e.g., linked filters or drill-downs) behave as configured.  
+4. The system allows users to select or update data sources for visualizations without errors.  
+5. The final output is a user-defined, interactive chart that meets reporting and analysis needs.",
+8,9,Advanced Analytics and Machine Learning,AAM-03,"Common ML techniques such as linear regression, gradient boosting models, classification models, scoring models, supervised models, unsupervised models as must be supported. There should be a low- or no-code functionality for the basic models mentioned above.","DMD
+DSAAD","Leonard Balon
+Matias, Al Zandrix
+JD Macatuggal","Business Analytics Manager
+Data Scientist
+Data Analyst
+Data Engineer","As an end user, I should be able to select a modeling method from a drop-down list,
+so that I can configure and apply the appropriate model for my data analysis or machine learning task.",,"The system displays a drop-down list of available modeling methods, allows the user to select one (e.g. linear regression, classification, clustering), and automatically loads the corresponding configuration interface, enabling the user to proceed with model setup and application based on the selected method.",
+8,10,Advanced Analytics and Machine Learning,"AAM-04
+AAM-09
+AAM-13","User should be able to catalog created models (during model building) that includes essential model metrics such as
+   1) predictive power
+   2) area under the curve
+   3) goodnes of fit
+   4) Specificity 
+   5) Sensitivity
+   6) Precision
+   7) Accuracy
+   8) error-rate / misclassification rate
+   9) <any other user-defined metric>
+
+User should be able to select the champion model with the best model parameters from the catalog and recommend/publish it as the ""baseline model""","DMD
+DSAAD","JD Macatuggal
+Leonard Balon
+Matias, Al Zandrix","Business Analytics Manager
+Data Scientist
+Data Analyst
+Data Engineer","As an end user,I should be able to access a facility within the system that catalogs all trained models and recommends a champion model based on the dataset and defined model metrics (e.g., Area Under the Curve, Lift),
+so that I can easily identify the most effective model for deployment or further analysis.",,"The system displays a catalog of all trained models with relevant metadata and performance metrics, automatically evaluates them based on defined criteria (e.g. Area Under the Curve, Lift), and clearly recommends the champion model by highlighting it in the interface, enabling the user to identify the best-performing model for deployment or further analysis.",
+8,11,Advanced Analytics and Machine Learning,"AAM-06
+AAM-08
+AAM-10","User should be able to perform various data mining pre-processing from a simplified facility of the system where at least below options may be selected:
+   1) Data Cleaning
+   2) Transformation
+   3) Combination / Integration
+   4) Reduction
+   5) Feature Engineering
+   6) Variable clustering","DMD
+DSAAD","JD Macatuggal
+Leonard Balon
+Matias, Al Zandrix","Business Analytics Manager
+Data Scientist
+Data Analyst
+Data Engineer","As an end user,I should be able to access a facility within the system that performs feature extraction, variable clustering, and other data mining pre-processing techniques,
+so that I can prepare my dataset effectively for modeling and analysis.",,"The system provides a pre-processing interface where the user can perform feature extraction, variable clustering, and other data mining techniques, and displays the transformed dataset with updated structure and metadata, ready for use in modeling and analysis.",
+8,12,Advanced Analytics and Machine Learning,AAM-09,Semantic Data Models,ITG,ITG CORE PROJECT TEAM,Technical User,"Query data from two tables (e.g., Customers and Orders) linked by a defined semantic relationship (e.g., Customer ID).",Basic Relationship Integrity,"The query returns correctly filtered and joined data based only on the defined relationship, ensuring no orphaned or incorrect records appear.",
+8,13,Advanced Analytics and Machine Learning,AAM-09,Verify that the system allows users to create data models from various internal and external data sources,DSAAD,"Matias, Al Zandrix","Data Scientist
+Data Analyst
+Data Engineer","As an end user, I should be able to create data models using data from various internal and external sources, such as Excel, CSV, delimited text, XML, and SQL files.",,"The system allows users to upload or connect to various internal and external data sources—including Excel, CSV, delimited text, XML, and SQL files or databases—and provides a guided interface to preview, parse, select, and map relevant data fields. This enables users to configure model parameters and successfully create data models that accurately reflect the imported datasets.",
+8,14,Advanced Analytics and Machine Learning,AAM-11,Verify that the system allows users to train machine learning models by splitting data and adjusting model parameters,DSAAD,"Matias, Al Zandrix",Data Scientist / Data Analyst / Data Engineer,"As an end user, I should be able to train machine learning models by splitting the dataset into training and testing sets, and feeding the training data into the model with adjustable parameters,
+so that I can evaluate model performance and optimize it for deployment.",,"The system allows the user to split the dataset into training and testing sets using configurable ratios, feed the training data into a selected machine learning model, adjust model parameters and successfully train the model while displaying progress and performance metrics for evaluation and optimization.",
+8,15,Advanced Analytics and Machine Learning,AAM-12,ML Model Testing Workflow Validation,"DMD
+DSAAD","DMD
+DSAAD","Business Analytics Manager
+Data Scientist
+Data Analyst
+Data Engineer","1. Access the ML Model Testing module in the analytics tool.
+2. Upload a dataset and initiate the train-test split with a specified ratio.
+3. Select a machine learning algorithm and train the model using the training data.
+4. Run the trained model on the test data to generate predictions.
+5. View and interpret the model’s performance metrics (accuracy, precision, recall, F1 score).",,"1. The system successfully splits the dataset into training and testing sets based on the specified ratio.
+2. The ML model is trained without errors using the training data.
+3. The model generates predictions on the test data.
+4. The system displays performance metrics (accuracy, precision, recall, F1 score) clearly and correctly.
+5. The user can interpret the model’s effectiveness based on the metrics provided.",
+8,16,Advanced Analytics and Machine Learning,AAM-15,Verify that the system allows users to monitor and evaluate model performance metrics and generate out-of-the-box performance reports,DSAAD,"Matias, Al Zandrix",Data Scientist / Data Analyst / Data Engineer,"As an end user, I should be able to monitor and evaluate the performance metrics of data models and generate out-of-the-box performance reports,
+so that I can assess model effectiveness and make informed decisions for model tuning or deployment.",,"The system displays real-time performance metrics for each trained data model and automatically generates out-of-the-box performance reports with visual summaries and detailed insights, enabling the user to assess model effectiveness and make informed decisions for tuning or deployment.",
+8,17,Advanced Analytics and Machine Learning,AAM-19,"The platform must be able to support real-time data streaming. Test for the ability to handle large volume of transaction data coming from multiple channels including digital platforms, and branches. A good test case is InstaPay transactions which could be validated using the settlement data from BancNet.",DMD,Leonard Balon,Business Analytics Manager,"1. Generate data events from multiple system sources or channels.
+2. Monitor the system’s ability to ingest and process these events in real-time.
+3. Access the analytics interface to verify that data is reflected immediately.
+4. Compare processed data with a trusted external reference to confirm accuracy.
+5. Simulate high-volume data input to evaluate system performance.
+6. Review logs or alerts for any anomalies or delays.",,"1. The system captures and processes data from all sources in real-time with minimal latency.  
+2. The analytics interface consistently reflects up-to-date and accurate information.  
+3. The system remains stable and responsive under high data volume, with proper logging of any issues.",
+8,18,Advanced Analytics and Machine Learning,AAM-19,"Users should be able to refresh/run an existing or customized output such as below
+  1) dashboard/report
+  2) prediction result (from model)
+  3) data query to a specified data source;
+
+within a reasonably short duration (i.e. less than or similar speed to current analysis tools), at real-time.",DMD,JD Macatuggal,Business Analytics Manager,"1. Access an existing or customized analytical output such as a dashboard, report, prediction result, or data query.
+2. Trigger a refresh or re-run of the selected output using the platform’s interface.
+3. Measure the time taken for the output to update or complete execution.
+4. Compare the refresh duration against benchmarks from current analysis tools.
+5. Validate that the refreshed output reflects the latest available data.",,"1. The system successfully refreshes or re-runs the selected output within a reasonably short duration, comparable to existing tools.  
+2. The refreshed output accurately reflects the most recent data or model results.  
+3. The platform remains responsive and stable during the refresh process, even under typical user load.",
+8,19,Advanced Analytics and Machine Learning,AAM-20,"Users should be able to create reports, dashboards, and visualizations within existing business workflows and applications.
+Users should be able to:
+   1) Create output Report/Dashboard/Analysis' delivery, usage & feedback metrics
+   2) Create summary KPI dashboard of delivered output by Team, Unit, Department & Division",DMD,JD Macatuggal,Business Analytics Manager,"1. Access an existing output request tracking site or report/dashboard repositoy,
+2. Open system facility to create & customize
+   a) request tracking site's summary metrics and/or performance dashboard summary, i.e. opened tickets, completed on time, tickets re-opened, etc.
+   b) output report/dashboard's usage metrics i.e. x times accessed, x times downloaded, count of unique users, user's feedback/rating of  the output
+   *or at the least, the user should be able to download data to generate a) and b) in the the sytems' report/dashboard/visualization creation facility
+3. Publish the created output summary / performance dashboard accessible by designated system users.",,"1. The system provides a facility to be able to generate a
+   a) output request tracking site's summary metrics and/or performance dashboard summary 
+   b) output report/dashboard's usage metrics
+2. The sytem sucessfully creates 1.a and 1.b
+3) The created performance summary or usage metrics report is accessible only by designated persons",
+8,20,Advanced Analytics and Machine Learning,AAM-21,"User should be able to apply various machine learning (ML) techniques and perform advance analytics though the use of: 
+   1) Exploratory Data Analysis (Descriptive & diagnostic analytics)
+   2) Predictive Modeling (AI/ML and other methods)
+   3) Scenario modeling and simulation (what-if) analysis by changing input parameters and seeing the impact
+   4) Risk profiling of customers
+   5) Geolocation monitoring
+   6) Natural Language Processing (NLP) algorithms for text/speech
+   7) Fuzzy matching
+   8) Natural Language Query (NLQ)",DMD,"JD Macatuggal
+Leonard Balon
+ITG CORE PROJECT TEAM
+Matias, Al Zandrix","Business Analytics Manager
+Data Scientist
+Data Analyst
+Data Engineer","As an end user, I should be able to perform a wide range of analytics and modeling tasks using built-in supervised and unsupervised algorithms—such as decision trees, random forests, gradient boosting, clustering, and fuzzy matching—without needing manual configuration. I should also be able to conduct descriptive, diagnostic, predictive, and prescriptive analytics; perform scenario modeling and simulation through adjustable input parameters; assess customer risk profiles; and connect to various data sources to apply appropriate techniques based on the nature of my data.",,"The system enables users to apply built-in supervised and unsupervised algorithms—such as decision trees, random forests, gradient boosting, clustering, and fuzzy matching—with default or minimal configuration. It automatically executes models and presents concise performance summaries and targeted analysis results based on data characteristics. Users can perform descriptive, diagnostic, predictive, and prescriptive analytics; conduct scenario modeling and simulation by adjusting input parameters; and perform customer risk profiling by analyzing and categorizing data. These capabilities support quick experimentation, informed decision-making, and deeper insights into historical trends, future forecasts, and data quality.",
+8,21,Advanced Analytics and Machine Learning,AAM-23,Verify that the system supports built-in statistical modeling and hypothesis testing for data models,DSAAD,"Matias, Al Zandrix","Data Scientist
+Data Analyst
+Data Engineer","As an end user, I should be able to perform statistical and analytical modeling techniques—including linear regression, time series analysis, hypothesis testing, and correlation analysis—so that I can understand relationships between variables, validate assumptions, analyze trends and seasonality, forecast future values, and identify patterns in my data.",,"The system enables users to perform statistical and predictive modeling tasks with minimal setup, including linear regression, time series analysis, hypothesis testing, and correlation analysis. It automatically analyzes relationships between variables, identifies trends and seasonality, validates assumptions, and highlights strong or weak correlations—providing predictive insights and supporting data-driven decision-making.",
+8,22,Advanced Analytics and Machine Learning,AAM-24,Model Score Interpretation Generation,"DMD
+DSAAD","DMD
+DSAAD","Business Analytics Manager
+Data Scientist
+Data Analyst
+Data Engineer","1. Access the ML Model Testing module in the analytics tool.
+2. Select a trained machine learning model with available prediction scores.  
+3. Click on the “Generate Interpretation” or “Explain Score” feature.  
+4. Choose the explanation method (e.g., SHAP, LIME, feature importance).  
+5. View the generated interpretation showing how input features influenced the model score.",,"1. The system successfully retrieves the selected model’s prediction scores.  
+2. The explanation method is applied correctly to the model.  
+3. A clear, user-friendly interpretation is displayed, showing feature contributions to the score.  
+4. The user can understand and validate the model’s decision-making process.",
+8,23,Advanced Analytics and Machine Learning,AAM-25,Business Rule and Metric Definition & Governance,"DMD
+DSAAD","DMD
+DSAAD","Business Analytics Manager
+Data Scientist
+Data Analyst
+Data Engineer","1. Access the Business Rules & Metrics module in the analytics tool.
+2. Create a new rule or metric by defining logic, formulas, or hierarchies using code (e.g., SQL, DSL).  
+3. Save and register the rule/metric for governance and version control.  
+4. Assign the rule/metric to relevant datasets or analytics models.  
+5. Validate that the rule/metric is available and correctly applied in downstream analytics or model outputs.",,"1. The user is able to define business rules and metrics using code in a user-friendly interface.  
+2. The system successfully registers and governs the defined rules/metrics with version control.  
+3. The defined rules/metrics are reusable and accessible across datasets, dashboards, and models.  
+4. Downstream analytics and models reflect standardized and governed metrics as expected.",
+8,24,Advanced Analytics and Machine Learning,AAM-26,Advanced Search Functionality Validation,"DMD
+DSAAD","DMD
+DSAAD","Business Analytics Manager
+Data Scientist
+Data Analyst
+Data Engineer","1. Access the analytics tool and navigate to the search interface.  
+2. Enter a complex query using filters, keywords, or logical operators (e.g., AND, OR, NOT).  
+3. Apply additional parameters such as date range, data source, or metadata tags.  
+4. Execute the search and review the returned results.  
+5. Refine the query and validate that the system updates the results accordingly.",,"1. The system accepts and processes complex search queries with multiple filters and conditions.  
+2. Relevant and accurate results are returned based on the query parameters.  
+3. The user can refine the search dynamically and see updated results in real time.  
+4. The interface supports intuitive navigation and interaction with search results.",
+8,25,Advanced Analytics and Machine Learning,AAM-28,"Check that the platform has good documentation features. It must support LaTEX, and Markdown.",DMD,"JD Macatuggal
+Leonard Balon",Business Analytics Manager,"1. Access the model governance module in the analytics platform.  
+2. Open the documentation section for a selected model.  
+3. Enter content using Markdown syntax (e.g., headings, lists, links) and LaTeX expressions for mathematical notation.  
+4. Save the documentation and preview the rendered output.  
+5. Validate that both Markdown formatting and LaTeX expressions are correctly displayed and editable.",,"1. Users can view models and versions according to their access permissions.
+2. Role-based actions (e.g., edit, submit, approve) are available and function correctly.
+3. All updates and actions are saved, tracked, and reflected accurately in the system.",
+8,26,Advanced Analytics and Machine Learning,"AAM-29
+AAM-32","Users should be able to
+   1) save model versions within phases of development such as initial creation, review, approval, baseline
+   2) document details pertaining to each version
+   3) restore and promote as ""baseline"" any of the previous saved versions of the model",DMD,"JD Macatuggal
+Leonard Balon",Business Analytics Manager,"1. Access the model management module in the analytics platform and open a model in development.  
+2. Save the model under a specific version label (e.g., “Initial Creation”, “Review”, “Approval”).  
+3. Add documentation or notes describing the changes or purpose of the saved version.  
+4. Browse previously saved versions and select one to restore or promote as the current baseline.  
+5. Confirm that the restored version is active and reflected in the model’s status and metadata.",,"1. The system allows users to save models under distinct version labels during different development phases.  
+2. Each version can be documented with relevant details and is stored securely.  
+3. Users can view, compare, and restore any previous version of the model.  
+4. Promoting a version as “baseline” updates the model’s status and makes it the active reference.  
+5. Version history is traceable and supports governance and audit requirements.",
+8,27,Advanced Analytics and Machine Learning,AAM-30,Periodic Model Assessment,"DMD
+DSAAD","DMD
+DSAAD","Business Analytics Manager
+Data Scientist
+Data Analyst
+Data Engineer","1. Access the model governance or monitoring module in the analytics tool.  
+2. Select the model scheduled for periodic assessment and view its performance history.  
+3. Initiate the assessment workflow and share model performance data with the vendor.  
+4. Collaborate with the vendor to review metrics, validate assumptions, and suggest improvements.  
+5. Document the assessment outcome and update model status or configuration if needed.",,"1. The system allows users to access and select models for scheduled assessments.  
+2.  Historical performance data and metrics are available and shareable with vendors.  
+3.  Collaboration tools or export features support vendor engagement and feedback.  
+4.  Assessment outcomes are documented and reflected in model governance records.  
+5.  Any updates or recommendations from the assessment are traceable and auditable.",
+8,28,Advanced Analytics and Machine Learning,AAM-33,Self-Service Reporting and Analytics,"DMD
+DSAAD","DMD
+DSAAD","Business Analytics Manager
+Data Scientist
+Data Analyst
+Data Engineer","1. Log in to the analytics tool and navigate to the self-service analytics page.  
+2. Select a dataset or domain of interest from the available data catalog.  
+3. Use the drag-and-drop or query builder interface to explore data and define report parameters.  
+4. Generate visualizations or tabular reports based on selected metrics and filters.  
+5. Save or export the report and optionally schedule it for recurring delivery.",,"1. The user can easily access and navigate the self-service analytics interface without technical assistance.  
+2. Data exploration and report creation are intuitive and responsive, requiring minimal training.  
+3. Reports and insights are generated accurately based on user-defined parameters.  
+4. The system supports saving, exporting, and scheduling reports for future use.  
+5. Users are empowered to perform analytics independently, promoting data democratization.",
+8,29,Advanced Analytics and Machine Learning,AAM-01,Time Series Forcasting,ITG,ITG CORE PROJECT TEAM,Data Scientist,"Time Series Forecasting: User runs a built-in time-series function (e.g., FORECAST(), ARIMA) on a table of daily_transactions to predict the next 30 days of volume.",,The function executes and produces a new table containing the forecasted values and confidence intervals.,
+8,30,Advanced Analytics and Machine Learning,AAM-01,Geospastial Analysis,ITG,ITG CORE PROJECT TEAM,Data Scientist,"Geospatial Analysis (Point-in-Polygon): User runs a SQL query with geospatial functions (e.g., ST_CONTAINS) to join a table of customer coordinates (Points) with a table of bank districts (Polygons).",,The query successfully returns a list of customers and the specific district they are in.,
+8,31,Advanced Analytics and Machine Learning,AAM-01,Graph Analytics,ITG,ITG CORE PROJECT TEAM,Data Scientist,"Graph Analytics (PageRank): User defines a graph from two tables (e.g., accounts as nodes, transactions as edges) and runs a graph algorithm (e.g., PageRank).",,"The function returns a table with an account_id and its calculated pagerank_score, identifying the most central accounts.",
+8,32,Advanced Analytics and Machine Learning,AAM-11,Auto ML Model Training,ITG,ITG CORE PROJECT TEAM,Data Analyst,"AutoML Model Training: User selects a prepared data mart (e.g., customer churn data) and uses the platform's AutoML feature to train a classification model.",,"The platform successfully preprocesses data, runs multiple experiments, and presents a ""leaderboard"" of the best-performing models.",
+8,33,Advanced Analytics and Machine Learning,AAM-11,Custom Model Training (Notebook),ITG,ITG CORE PROJECT TEAM,Data Scientist,"Custom Model Training (Notebook): User opens a built-in notebook (e.g., Jupyter), loads data from a data mart, and trains a custom model using a standard library (e.g., scikit-learn).",,The user can successfully save the trained model file back to the platform.,
+8,34,Advanced Analytics and Machine Learning,AAM-08,"Model Deployment (Real-time): User selects a registered model (e.g., fraud_model",ITG,ITG CORE PROJECT TEAM,Data Scientist,"Model Deployment (Real-time): User selects a registered model (e.g., fraud_model:v1) and deploys it as a real-time inference endpoint.",,The platform provisions the endpoint and provides a secure API URL for scoring.,
+8,35,Advanced Analytics and Machine Learning,AAM-12,Real Inference (Scoring),ITG,ITG CORE PROJECT TEAM,Developer,"Real-time Inference (Scoring): Developer sends a single JSON payload (e.g., a new transaction) to the model endpoint API.",,"The API returns a prediction (e.g., {""prediction"": ""fraud"", ""confidence"": 0.92}) with low latency (< 500ms).",
+8,230,Others,TR69,Code generation - ETL script,ITG,ITG CORE PROJECT TEAM,Technical User,"AI can generate a data pipeline/ETL script based on a high-level requirement (e.g., ""Load data from S3, clean null values, and write to a data warehouse table"").",,"The generated script is complete, runnable, and performs the specified data operations correctly within the platform's execution environment",

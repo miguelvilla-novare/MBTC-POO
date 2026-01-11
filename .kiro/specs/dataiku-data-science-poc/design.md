@@ -210,11 +210,14 @@ Customer {
   customer_id: String (Primary Key)
   name: String
   age: Integer
-  location: GeoPoint
-  account_type: String
-  risk_profile: String
-  created_date: DateTime
-  last_activity: DateTime
+  gender: String (F/M)
+  income: Decimal
+  account_balance: Decimal
+  account_type: String (Savings/Checking/Premium)
+  risk_score: Decimal (0.0-1.0)
+  location_lat: Decimal
+  location_lng: Decimal
+  churn_flag: Integer (0/1)
 }
 ```
 
@@ -224,43 +227,92 @@ Transaction {
   transaction_id: String (Primary Key)
   customer_id: String (Foreign Key)
   amount: Decimal
+  transaction_date: Date
   transaction_type: String
-  timestamp: DateTime
-  channel: String
-  location: GeoPoint
-  fraud_score: Decimal
+  channel: String (ATM/Online/POS/Branch)
+  fraud_flag: Integer (0/1)
+  merchant_category: String
 }
 ```
 
-**Model Metadata Entity**
+**Branch Entity**
 ```
-ModelMetadata {
-  model_id: String (Primary Key)
-  model_name: String
-  version: String
-  algorithm_type: String
-  performance_metrics: JSON
-  training_date: DateTime
-  status: String
-  deployment_endpoint: String
+Branch {
+  branch_id: String (Primary Key)
+  branch_name: String
+  latitude: Decimal
+  longitude: Decimal
+  district: String
+  region: String
+  branch_type: String (Main/Sub)
+}
+```
+
+**Customer Feedback Entity**
+```
+CustomerFeedback {
+  feedback_id: String (Primary Key)
+  customer_id: String (Foreign Key)
+  feedback_text: String
+  sentiment: String (positive/negative/neutral)
+  date_submitted: Date
+  rating: Integer (1-5)
+}
+```
+
+**Data Quality Test Entity**
+```
+QualityTestData {
+  customer_id: String (Primary Key)
+  name: String (may be null/empty)
+  age: Integer (may be invalid: negative, >150)
+  gender: String (may be invalid: not F/M)
+  income: Decimal (may be null)
+  account_balance: Decimal (may be negative)
+  account_type: String (may be invalid type)
+  risk_score: Decimal (may be out of range)
+  location_lat: Decimal (may be null)
+  location_lng: Decimal (may be null)
+  churn_flag: Integer (0/1)
 }
 ```
 
 ### Dataset Requirements
 
-**Primary Dataset: Banking Customer Analytics**
-- Customer demographics and account information
-- Transaction history with timestamps and amounts
-- Geographic data for location-based analysis
-- Risk indicators and fraud labels for supervised learning
+**Complete Synthetic Banking Dataset Collection**
+Our implementation uses 5 carefully designed synthetic datasets that provide complete coverage of all 35 test cases:
 
-**Recommended Dataset Sources:**
-1. **Kaggle: Bank Customer Churn Dataset** - Customer demographics, account details, churn labels
-2. **Kaggle: Credit Card Fraud Detection** - Transaction data with fraud indicators
-3. **Generated Synthetic Data** - Time series transaction data for forecasting
-4. **OpenStreetMap Data** - Geographic boundaries for geospatial analysis
+**1. bank_customers_100.csv (100 customers)**
+- Customer demographics: age, gender, income, account_balance
+- Account information: account_type (Savings, Checking, Premium)
+- Risk scoring: risk_score (0.04-0.48 range)
+- Geographic data: location_lat, location_lng (Philippine coordinates)
+- Churn labels: churn_flag for classification models
 
-This approach minimizes dataset complexity while covering all test case requirements through a unified banking domain context.
+**2. transactions.csv (40 transactions)**
+- Transaction details: amount, date, type, channel
+- Fraud detection: fraud_flag for supervised learning
+- Multi-channel data: ATM, Online, POS, Branch transactions
+- Merchant categories: Grocery, Restaurant, Shopping, etc.
+
+**3. bank_branches.csv (15 branches)**
+- Branch locations: latitude, longitude coordinates
+- Geographic hierarchy: district, region information
+- Branch types: Main and Sub branches for analysis
+
+**4. customer_feedback.csv (15 feedback records)**
+- Text data: customer feedback comments
+- Sentiment analysis: positive, negative, neutral labels
+- Rating system: 1-5 star ratings
+- Temporal data: date_submitted for time series analysis
+
+**5. customers_with_quality_issues.csv (10 problematic records)**
+- Data quality testing: missing values, invalid data types
+- Anomaly detection: negative balances, invalid ages
+- Edge cases: missing coordinates, invalid account types
+- Validation testing: out-of-range values, malformed data
+
+This comprehensive dataset collection covers all test case requirements including visualization, machine learning, advanced analytics, NLP, geospatial analysis, data quality testing, and model governance scenarios.
 
 ## Error Handling
 

@@ -27,7 +27,7 @@ This document outlines the requirements for implementing and validating 35 Data 
 2. WHEN creating visualizations, THE Dataiku_Platform SHALL provide at least 10 chart types including line charts, bar charts, pie charts, heat maps, tree maps, scatter plots, histograms, and boxplots
 3. WHEN generating visualizations, THE Dataiku_Platform SHALL complete chart creation in 5 steps or fewer with minimal user effort
 4. WHEN customizing visualizations, THE Dataiku_Platform SHALL provide dropdown menus for chart type, size, formatting, filters, and data source selection
-5. WHEN analyzing data quality, THE Dataiku_Platform SHALL automatically detect and flag anomalies, missing values, and data inconsistencies
+5. WHEN analyzing data quality using customers_with_quality_issues.csv, THE Dataiku_Platform SHALL automatically detect and flag anomalies including missing values, invalid ages, negative balances, and out-of-range risk scores
 6. WHEN requesting natural language summaries, THE Dataiku_Platform SHALL generate business-relevant explanations of dashboard trends and anomalies
 
 ### Requirement 2: Machine Learning Model Development
@@ -67,7 +67,7 @@ This document outlines the requirements for implementing and validating 35 Data 
 3. WHEN running graph analytics, THE Dataiku_Platform SHALL calculate PageRank scores and identify central nodes in network data
 4. WHEN applying statistical modeling, THE Dataiku_Platform SHALL perform linear regression, hypothesis testing, correlation analysis, and trend identification
 5. WHEN conducting scenario modeling, THE Dataiku_Platform SHALL allow parameter adjustment for what-if analysis and impact simulation
-6. WHEN processing natural language, THE Dataiku_Platform SHALL support NLP algorithms for text analysis and natural language querying
+6. WHEN processing natural language using customer_feedback.csv, THE Dataiku_Platform SHALL support NLP algorithms for sentiment analysis, text classification, and natural language querying of customer feedback data
 
 ### Requirement 5: Model Governance and Deployment
 
@@ -114,9 +114,9 @@ This document outlines the requirements for implementing and validating 35 Data 
 
 #### Acceptance Criteria
 
-1. WHEN detecting data anomalies, THE Dataiku_Platform SHALL automatically identify outliers, inconsistencies, and quality issues with appropriate alerts
-2. WHEN validating data relationships, THE Dataiku_Platform SHALL ensure referential integrity in joined datasets without orphaned records
+1. WHEN detecting data anomalies using customers_with_quality_issues.csv, THE Dataiku_Platform SHALL automatically identify outliers, inconsistencies, missing names, invalid ages, negative balances, and quality issues with appropriate alerts
+2. WHEN validating data relationships between bank_customers_100.csv and transactions.csv, THE Dataiku_Platform SHALL ensure referential integrity in joined datasets without orphaned records
 3. WHEN monitoring data drift, THE Dataiku_Platform SHALL detect distribution changes and flag time windows with anomalous data patterns
 4. WHEN processing streaming data, THE Dataiku_Platform SHALL validate data accuracy against trusted external references
-5. WHEN handling missing data, THE Dataiku_Platform SHALL provide options for imputation, removal, or flagging of incomplete records
-6. WHEN auditing data lineage, THE Dataiku_Platform SHALL track data transformations and maintain complete processing history
+5. WHEN handling missing data in customers_with_quality_issues.csv, THE Dataiku_Platform SHALL provide options for imputation, removal, or flagging of incomplete records
+6. WHEN auditing data lineage across all 5 datasets, THE Dataiku_Platform SHALL track data transformations and maintain complete processing history

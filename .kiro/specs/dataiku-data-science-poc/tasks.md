@@ -13,11 +13,13 @@ This implementation plan breaks down the 35 Data Science test cases into executa
   - _Requirements: 1.1, 3.4_
 
 - [ ] 1.1 Acquire and prepare banking datasets
-  - Download Kaggle Bank Customer Churn dataset
-  - Download Kaggle Credit Card Fraud Detection dataset  
-  - Generate synthetic transaction time series data
-  - Create sample geospatial data for location analysis
-  - _Requirements: 1.1, 4.2_
+  - Use provided synthetic banking datasets (5 CSV files)
+  - bank_customers_100.csv - Main customer data (100 records)
+  - transactions.csv - Transaction history (40 records)
+  - bank_branches.csv - Branch locations (15 records)
+  - customer_feedback.csv - Text data for NLP analysis (15 records)
+  - customers_with_quality_issues.csv - Data quality testing (10 records)
+  - _Requirements: 1.1, 4.2, 4.6, 8.1_
 
 - [ ]* 1.2 Write property test for data import consistency
   - **Property 1: Multi-format Data Import Consistency**
@@ -25,9 +27,10 @@ This implementation plan breaks down the 35 Data Science test cases into executa
 
 - [ ] 2. Data Quality Analysis and Visualization Foundation
   - [ ] 2.1 Implement data quality analysis using Dataiku's built-in features
+    - Import customers_with_quality_issues.csv for testing data quality detection
     - Create data quality reports for all imported datasets
-    - Configure automatic anomaly detection and alerts
-    - Set up missing value identification and flagging
+    - Configure automatic anomaly detection for missing values, invalid ages, negative balances
+    - Set up alerts for out-of-range values and invalid data types
     - _Requirements: 1.5, 8.1_
 
 - [ ]* 2.2 Write property test for data quality detection
@@ -162,9 +165,11 @@ This implementation plan breaks down the 35 Data Science test cases into executa
   - **Validates: Requirements 4.5**
 
 - [ ] 8.5 Implement NLP and text analysis capabilities
-  - Set up text processing recipes for customer feedback analysis
-  - Implement natural language query interfaces
-  - Create sentiment analysis and text classification models
+  - Import customer_feedback.csv for text analysis
+  - Set up text processing recipes for sentiment analysis
+  - Implement natural language query interfaces using feedback text
+  - Create sentiment classification models (positive/negative/neutral)
+  - Build text analytics dashboard showing customer satisfaction trends
   - _Requirements: 4.6_
 
 - [ ] 9. Checkpoint - Validate Advanced Analytics
@@ -349,4 +354,5 @@ This implementation plan breaks down the 35 Data Science test cases into executa
 - Checkpoints ensure incremental validation and provide opportunities for course correction
 - Property tests validate universal correctness properties using generated test data
 - Implementation focuses on Dataiku's native features to minimize custom development
-- Banking domain datasets provide unified context across all test scenarios
+- Complete synthetic dataset collection (5 CSV files) provides 100% coverage of all 35 test cases
+- Datasets include realistic Philippine banking scenarios with built-in data quality issues for testing
